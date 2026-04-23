@@ -8,4 +8,8 @@ public class Parking {
 		this.nbplaces = nbplaces;
 	}
 
+	public int getNbplaceslibres() {
+		return nbplaces;
+	}
+
 }
