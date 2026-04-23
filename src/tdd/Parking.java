@@ -17,7 +17,17 @@ public class Parking {
 	public void ajouter(Vehicule v) {
 		vehicules[nbplacesoccupé] = v;
 		nbplacesoccupé++;
+	}
 
+	public void retirer(Vehicule v) {
+		for (int i = 0; i < vehicules.length; i++) {
+			if (vehicules[i] == v) {
+				vehicules[i] = null;
+				nbplacesoccupé--;
+			}
+
+		}
+		return;
 	}
 
 }

@@ -30,4 +30,15 @@ class GameTest {
 
 	}
 
+	@Test
+	void iter3() {
+		p = new Parking(10);
+		v = new Vehicule("1");
+		assertEquals(p.getNbplaceslibres(), 10);
+		p.ajouter(v);
+		assertEquals(p.getNbplaceslibres(), 9);
+		p.retirer(v);
+		assertEquals(p.getNbplaceslibres(), 10);
+	}
+
 }
