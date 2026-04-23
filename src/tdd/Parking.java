@@ -16,9 +16,13 @@ public class Parking {
 		return nbplaces - nbplacesoccupé;
 	}
 
-	public void ajouter(Vehicule v) {
-		vehicules[nbplacesoccupé] = v;
-		nbplacesoccupé++;
+	public boolean ajouter(Vehicule v) {
+		if (nbplacesoccupé < nbplaces) {
+			vehicules[nbplacesoccupé] = v;
+			nbplacesoccupé++;
+			return true;
+		}
+		return false;
 	}
 
 	public int retirer(Vehicule v, int duréestationement) {

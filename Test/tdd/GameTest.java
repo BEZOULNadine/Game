@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 class GameTest {
 	Parking p;
 	Vehicule v;
+	Vehicule vv;
+	Vehicule vvv;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -47,6 +49,17 @@ class GameTest {
 		v = new Vehicule("1");
 		p.ajouter(v);
 		assertEquals(15, p.retirer(v, 5));
+	}
+
+	@Test
+	void iter5() {
+		p = new Parking(2, 3);
+		v = new Vehicule("1");
+		vv = new Vehicule("6");
+
+		p.ajouter(v);
+		p.ajouter(v);
+		assertEquals(false, p.ajouter(vvv));
 	}
 
 }
