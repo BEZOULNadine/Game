@@ -62,4 +62,14 @@ class GameTest {
 		assertEquals(false, p.ajouter(vvv));
 	}
 
+	@Test
+	void iter6() {
+		p = new Parking(2, 3);
+		v = new Vehicule("1");
+		vv = new Vehicule("6");
+		p.ajouter(v);
+		assertEquals(true, p.contient(v));
+		assertEquals(false, p.contient(vv));
+	}
+
 }

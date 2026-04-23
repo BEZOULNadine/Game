@@ -37,4 +37,14 @@ public class Parking {
 		return 0;
 	}
 
+	public boolean contient(Vehicule v) {
+		for (int i = 0; i < vehicules.length; i++) {
+			if (vehicules[i] == v) {
+				return true;
+			}
+		}
+		return false;
+
+	}
+
 }
