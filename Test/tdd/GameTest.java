@@ -84,4 +84,16 @@ class GameTest {
 		assertThrows(IllegalArgumentException.class, () -> pp.retirer(v, 1));
 	}
 
+	@Test
+
+	void iter8() {
+		p = new Parking(100, 0);
+		pp = new Parking(100, 0);
+		v = new Vehicule("1");
+		v.abonner(p);
+		assertEquals(v.estabonne(p), true);
+		assertEquals(v.estabonne(pp), false);
+
+	}
+
 }
