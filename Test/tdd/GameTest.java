@@ -96,4 +96,15 @@ class GameTest {
 
 	}
 
+	@Test
+
+	void iter9() {
+		p = new Parking(100, 10, 0.5f);
+		v = new Vehicule("1");
+		v.abonner(p);
+		p.ajouter(v);
+		assertEquals(15, p.retirer(v, 3));
+
+	}
+
 }
