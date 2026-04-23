@@ -4,10 +4,12 @@ public class Parking {
 	private int nbplaces;
 	private Vehicule[] vehicules;
 	private int nbplacesoccupé = 0;
+	private int tarif;
 
-	public Parking(int nbplaces) {
+	public Parking(int nbplaces, int tarif) {
 		this.nbplaces = nbplaces;
 		this.vehicules = new Vehicule[nbplaces];
+		this.tarif = tarif;
 	}
 
 	public int getNbplaceslibres() {
@@ -19,15 +21,16 @@ public class Parking {
 		nbplacesoccupé++;
 	}
 
-	public void retirer(Vehicule v) {
+	public int retirer(Vehicule v, int duréestationement) {
 		for (int i = 0; i < vehicules.length; i++) {
 			if (vehicules[i] == v) {
 				vehicules[i] = null;
 				nbplacesoccupé--;
+				return duréestationement * tarif;
 			}
 
 		}
-		return;
+		return 0;
 	}
 
 }
