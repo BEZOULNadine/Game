@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>GameTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">GameTest (1) (23 avr. 2026 10:25:22)</a> &gt; <a href="../../index.html" class="el_group">ChiffreRomain</a> &gt; <a href="../index.html" class="el_bundle">test</a> &gt; <a href="index.source.html" class="el_package">Chiffreromain</a> &gt; <span class="el_source">GameTest.java</span></div><h1>GameTest.java</h1><pre class="source lang-java linenums">package Chiffreromain;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+<span class="nc" id="L9">class GameTest {</span>
+	Game Gm;
+
+	@BeforeEach
+	void setUp() throws Exception {
+<span class="nc" id="L14">		Gm = new Game();</span>
+<span class="nc" id="L15">	}</span>
+
+	@Test
+	void Iter1() {
+<span class="nc" id="L19">		assertEquals(Gm.play(1), &quot;I&quot;);</span>
+<span class="nc" id="L20">	}</span>
+
+	@Test
+	void Iter2() {
+<span class="nc" id="L24">		assertEquals(Gm.play(2), &quot;II&quot;);</span>
+<span class="nc" id="L25">	}</span>
+
+	@Test
+	void Iter3() {
+<span class="nc" id="L29">		assertEquals(Gm.play(3), &quot;III&quot;);</span>
+<span class="nc" id="L30">	}</span>
+
+	@Test
+	void Iter4_1() {
+<span class="nc" id="L34">		assertThrows(IllegalArgumentException.class, () -&gt; Gm.play(0));</span>
+
+<span class="nc" id="L36">	}</span>
+
+	@Test
+	void Iter4_2() {
+<span class="nc" id="L40">		assertThrows(IllegalArgumentException.class, () -&gt; Gm.play(-1));</span>
+
+<span class="nc" id="L42">	}</span>
+
+	@Test
+	void Iter4_3() {
+<span class="nc" id="L46">		assertThrows(IllegalArgumentException.class, () -&gt; Gm.play(50000));</span>
+
+<span class="nc" id="L48">	}</span>
+
+	@Test
+	void Iter5() {
+<span class="nc" id="L52">		assertEquals(Gm.play(4), &quot;IV&quot;);</span>
+<span class="nc" id="L53">	}</span>
+
+	@Test
+	void Iter6() {
+<span class="nc" id="L57">		assertEquals(Gm.play(5), &quot;V&quot;);</span>
+<span class="nc" id="L58">	}</span>
+
+	@Test
+	void Iter7() {
+<span class="nc" id="L62">		assertEquals(Gm.play(9), &quot;IX&quot;);</span>
+<span class="nc" id="L63">	}</span>
+
+	@Test
+	void dix_donne_X() {
+<span class="nc" id="L67">		assertEquals(&quot;XI&quot;, Gm.play(11));</span>
+<span class="nc" id="L68">	}</span>
+
+	@Test
+	void trente_donne_XXX() {
+<span class="nc" id="L72">		assertEquals(&quot;XXXIV&quot;, Gm.play(34));</span>
+<span class="nc" id="L73">	}</span>
+
+	@Test
+	void Iter9() {
+<span class="nc" id="L77">		assertEquals(Gm.play(100), &quot;C&quot;);</span>
+<span class="nc" id="L78">	}</span>
+
+	@Test
+	void Iter10() {
+<span class="nc" id="L82">		assertEquals(Gm.play(2000), &quot;MM&quot;);</span>
+<span class="nc" id="L83">	}</span>
+
+	// nexttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+	@Test
+	void Iter11() {
+<span class="nc" id="L88">		assertEquals(Gm.play(1994), &quot;MCMXCIV&quot;);</span>
+<span class="nc" id="L89">	}</span>
+
+	@Test
+	void Iter12() {
+<span class="nc" id="L93">		assertEquals(Gm.play(2024), &quot;MMXXIV&quot;);</span>
+<span class="nc" id="L94">	}</span>
+
+	@Test
+	void Iter13() {
+<span class="nc" id="L98">		assertEquals(Gm.play(3999), &quot;MMMCMXCIX&quot;);</span>
+<span class="nc" id="L99">	}</span>
+
+	@Test
+	void Iter14() {
+<span class="nc" id="L103">		assertEquals(Gm.play(58), &quot;LVIII&quot;);</span>
+<span class="nc" id="L104">	}</span>
+
+	@Test
+	void Iter15() {
+<span class="nc" id="L108">		assertEquals(Gm.play(648), &quot;DCXLVIII&quot;);</span>
+<span class="nc" id="L109">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span>GameTest (1) (23 avr. 2026 10:25:22)</div></body></html>

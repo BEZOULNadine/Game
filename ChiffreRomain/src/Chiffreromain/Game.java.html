@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Game.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">GameTest (1) (23 avr. 2026 10:25:22)</a> &gt; <a href="../../index.html" class="el_group">ChiffreRomain</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">Chiffreromain</a> &gt; <span class="el_source">Game.java</span></div><h1>Game.java</h1><pre class="source lang-java linenums">package Chiffreromain;
+
+<span class="nc" id="L3">public class Game {</span>
+<span class="nc" id="L4">	int chiffrenormal[] = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };</span>
+<span class="nc" id="L5">	String chiffreroman[] = { &quot;M&quot;, &quot;CM&quot;, &quot;D&quot;, &quot;CD&quot;, &quot;C&quot;, &quot;XC&quot;, &quot;L&quot;, &quot;XL&quot;, &quot;X&quot;, &quot;IX&quot;, &quot;V&quot;, &quot;IV&quot;, &quot;I&quot; };</span>
+
+	public String play(int nombre) {
+<span class="nc" id="L8">		String mot = &quot;&quot;;</span>
+<span class="nc bnc" id="L9" title="All 4 branches missed.">		if (nombre &gt; 3999 || nombre &lt;= 0) {</span>
+<span class="nc" id="L10">			throw new IllegalArgumentException(&quot;Nombre invalide&quot; + nombre);</span>
+
+		}
+<span class="nc bnc" id="L13" title="All 2 branches missed.">		for (int i = 0; i &lt; chiffrenormal.length; i++) {</span>
+<span class="nc bnc" id="L14" title="All 2 branches missed.">			while (chiffrenormal[i] &lt;= nombre) {</span>
+<span class="nc" id="L15">				mot += chiffreroman[i];</span>
+<span class="nc" id="L16">				nombre -= chiffrenormal[i];</span>
+			}
+
+		}
+<span class="nc" id="L20">		return mot;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span>GameTest (1) (23 avr. 2026 10:25:22)</div></body></html>
