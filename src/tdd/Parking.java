@@ -28,13 +28,13 @@ public class Parking {
 	public int retirer(Vehicule v, int duréestationement) {
 		for (int i = 0; i < vehicules.length; i++) {
 			if (vehicules[i] == v) {
-				vehicules[i] = null;
+				vehicules[i] = vehicules[nbplacesoccupé - 1];
+				vehicules[nbplacesoccupé - 1] = null;
 				nbplacesoccupé--;
 				return duréestationement * tarif;
 			}
-
 		}
-		return 0;
+		throw new IllegalArgumentException();
 	}
 
 	public boolean contient(Vehicule v) {

@@ -1,6 +1,7 @@
 package tdd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ class GameTest {
 	Vehicule v;
 	Vehicule vv;
 	Vehicule vvv;
+	Parking pp;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -70,6 +72,16 @@ class GameTest {
 		p.ajouter(v);
 		assertEquals(true, p.contient(v));
 		assertEquals(false, p.contient(vv));
+	}
+
+	@Test
+
+	void iter7() {
+		p = new Parking(100, 0);
+		pp = new Parking(100, 0);
+		v = new Vehicule("1");
+		p.ajouter(v);
+		assertThrows(IllegalArgumentException.class, () -> pp.retirer(v, 1));
 	}
 
 }
