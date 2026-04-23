@@ -1,5 +1,6 @@
 package tdd;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -12,6 +13,7 @@ class GameTest {
 	Vehicule vv;
 	Vehicule vvv;
 	Parking pp;
+	Ambulance a;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -104,6 +106,17 @@ class GameTest {
 		v.abonner(p);
 		p.ajouter(v);
 		assertEquals(15, p.retirer(v, 3));
+
+	}
+
+	@Test
+
+	void iter10() {
+		p = new Parking(10, 10, 0.5f);
+		pp = new Parking(100, 10, 0.5f);
+		Ambulance a = new Ambulance("AMB");
+		assertTrue(a.estabonne(p));
+		assertTrue(a.estabonne(pp));
 
 	}
 
